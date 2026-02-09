@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monochrome Player Avanzato</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.7/shaka-player.compiled.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Monochrome Player Avanzato</h1>
+
+    <!-- Barra di ricerca -->
+    <div class="search">
+        <input type="text" id="searchBox" placeholder="Cerca un brano...">
+        <button onclick="search()">Cerca</button>
+    </div>
+
+    <!-- Lista risultati -->
+    <div id="results" class="results"></div>
+
+    <!-- Player e info brano -->
+    <div class="player-container">
+        <div class="track-info">
+            <img id="cover" src="" alt="Cover" />
+            <div>
+                <div id="trackTitle">Nessun brano</div>
+                <div id="trackArtist"></div>
+            </div>
+        </div>
+
+        <audio id="simpleAudioPlayer" controls></audio>
+        <div id="dashVideoContainer" style="display:none">
+            <video id="dashVideoPlayer" controls width="100%"></video>
+        </div>
+
+        <!-- Barra progresso -->
+        <input type="range" id="progressBar" value="0" min="0" max="100">
+        <div class="controls">
+            <button onclick="prevTrack()">⏮️</button>
+            <button onclick="playPause()">⏯️</button>
+            <button onclick="nextTrack()">⏭️</button>
+        </div>
+
+        <a id="flacDownloadLink" style="display:none"></a>
+    </div>
+</div>
+
+<script src="player.js"></script>
+<script src="advancedPlayer.js"></script>
+</body>
+</html>
